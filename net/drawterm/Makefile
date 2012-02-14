@@ -20,8 +20,7 @@ PLIST_FILES=	bin/drawterm
 PORTDOCS=	LICENSE README
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-do-build:
-	cd ${WRKSRC} && CONF=unix make
+MAKE_ARGS=CONF=unix X11=${LOCALBASE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drawterm ${PREFIX}/bin
