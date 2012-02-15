@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	winstonw@lavabit.com
 COMMENT=	Plan9 cpu client
 
-USE_XORG=	x11
+USE_XORG=	x11 xt
 
 PLIST_FILES=	bin/drawterm
 PORTDOCS=	LICENSE README
