@@ -10,10 +10,10 @@ PORTVERSION=	20111129
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://developer.android.com/design/static/download/
 DISTNAME=	Roboto_Hinted_${PORTVERSION}
-USE_ZIP=	YES
+USE_ZIP=	yes
 
 MAINTAINER=	winstonw@lavabit.com
-COMMENT=	The Robot typeface family
+COMMENT=	The Roboto typeface family
 
 LICENSE=	AL2
 
