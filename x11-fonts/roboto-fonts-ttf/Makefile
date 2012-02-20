@@ -10,7 +10,6 @@ PORTVERSION=	20111129
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://developer.android.com/design/static/download/
 DISTNAME=	Roboto_Hinted_${PORTVERSION}
-USE_ZIP=	yes
 
 MAINTAINER=	winstonw@lavabit.com
 COMMENT=	The Roboto typeface family
@@ -19,6 +18,8 @@ LICENSE=	AL2
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+
+USE_ZIP=	yes
 
 FONTDIR=	lib/X11/fonts/Roboto
 PKGMESSAGE=	${WRKDIR}/pkg-message
