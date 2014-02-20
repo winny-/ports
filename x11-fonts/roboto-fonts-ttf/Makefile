@@ -25,18 +25,15 @@ PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
-NO_STAGE=	yes
 do-build:
-	@cd ${WRKSRC}/ && \
+	@${MV} ${WRKSRC}/Roboto/*.ttf ${WRKSRC}/RobotoCondensed/*.ttf ${WRKSRC}
+	@cd ${WRKSRC} && \
 		${LOCALBASE}/bin/mkfontscale && \
 		${LOCALBASE}/bin/mkfontdir
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTDIR}/
-	cd ${WRKSRC}/Roboto && ${INSTALL_DATA} *.ttf ${PREFIX}/${FONTDIR}/
-	cd ${WRKSRC}/RobotoCondensed && ${INSTALL_DATA} *.ttf ${PREFIX}/${FONTDIR}/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.dir fonts.scale \
+		 ${STAGEDIR}${PREFIX}/${FONTDIR}
 
 .include <bsd.port.mk>
