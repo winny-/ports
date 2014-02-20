@@ -14,7 +14,9 @@ COMMENT=	The Roboto typeface family
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=    fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}

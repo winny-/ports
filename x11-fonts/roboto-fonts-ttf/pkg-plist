@@ -18,4 +18,6 @@
 %%FONTDIR%%/RobotoCondensed-Regular.ttf
 %%FONTDIR%%/fonts.dir
 %%FONTDIR%%/fonts.scale
-@dirrmtry %%FONTDIR%%
+@unexec /bin/rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTDIR%% || /usr/bin/true
