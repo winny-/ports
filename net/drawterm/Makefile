@@ -21,14 +21,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CONF=pthread
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/drawterm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/drawterm ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/LICENSE ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
