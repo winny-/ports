@@ -1,5 +1,5 @@
 # Created by: Winston Weinert <winstonw@lavabit.com>
-# $FreeBSD: head/x11-fonts/roboto-fonts-ttf/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/x11-fonts/roboto-fonts-ttf/Makefile 347790 2014-03-10 18:09:41Z bapt $
 
 PORTNAME=	roboto-fonts-ttf
 PORTVERSION=	1.2
@@ -16,9 +16,9 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=    fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_ZIP=	yes
+USES=		zip:infozip
 WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
 
 FONTDIR=	lib/X11/fonts/Roboto
